@@ -76,6 +76,17 @@ git push origin new_branch
 <br>
 Now, you can simply send the Pull Request to Parent Repo from within the Github.
 
+## Installation:
+
+For local development we suggest(requires [miniconda](http://conda.pydata.org/miniconda.html) installed):
+
+* Install apt deps `sudo apt-get install build-essential python-dev git`(use `brew install build-essential python-dev git` on Mac OSX). 
+* Create local environment - `conda create --name textbrew python=3.5`
+* Activate local environment - `source activate textbrew`
+* Install pip deps - `pip install -r requirements.txt`
+* Download Spacy Models - `python -m spacy.en.download all`
+
+
 ## A note about Commit Messages:
 * Commit messages shouldn't span for more than 7-8 words
 * Commit messages should be meaningful and not something like - "made some changes", etc.
@@ -100,5 +111,3 @@ git rebase -i HEAD~3
 ```
 
 Have a look at [Git-flow](http://nvie.com/posts/a-successful-git-branching-model/) for a structured way of working with Github.
-
-####Happy Coding :)
