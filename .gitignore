@@ -1,2 +1,4 @@
 .ipynb_checkpoints/*
 textbrew/__pycache__/*
+env/
+__pycache__/
