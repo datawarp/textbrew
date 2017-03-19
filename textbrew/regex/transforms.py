@@ -58,3 +58,6 @@ class InParenthesis(BaseRegex):
 
 class MergeSpaces(BaseRegex):
     regex_string = '\s\s+'
+    
+class EmailID(BaseRegex):
+    regex_string = '(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)'
