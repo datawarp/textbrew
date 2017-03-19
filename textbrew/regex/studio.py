@@ -1,5 +1,6 @@
+from __future__ import absolute_import
+
 import re
-from functools import reduce
 from .transforms import BaseRegex, MergeSpaces
 
 
@@ -8,19 +9,19 @@ def process_regex(data, regex):
 
 
 class RegexStudio(object):
-    """
+    u"""
     Common Regex operations for text cleaning and matching.
     """
 
-    def __init__(self, spl_chars=''):
-        """
+    def __init__(self, spl_chars=u''):
+        u"""
         Constructor for RegexStudio, sets up regex patterns
 
         :param spl_chars: str: special characters to ignore for cleaning purposes(eg: '_|$')
         """
 
     def add_escape_chars(self, text):
-        """
+        u"""
         Adds escape characters in a string
         to make it regex complaint
 
@@ -29,16 +30,16 @@ class RegexStudio(object):
         :returns text
         """
         # Get a list of all unique special characters
-        spl_chars = list(set(re.findall("[^A-Za-z0-9,\s]", text)))
+        spl_chars = list(set(re.findall(u"[^A-Za-z0-9,\s]", text)))
 
         # Append special characters with escape characters
         for char in spl_chars:
-            text = text.replace(char, '\\' + char)
+            text = text.replace(char, u'\\' + char)
 
         return text
 
-    def extract_substrings(self, text, start='^', end='$'):
-        """
+    def extract_substrings(self, text, start=u'^', end=u'$'):
+        u"""
         Extracts sub strings between two words.
 
         By default the initial sub-string is set to start
@@ -53,13 +54,13 @@ class RegexStudio(object):
         start = self.add_escape_chars(start)
         end = self.add_escape_chars(end)
 
-        substring_regex = '.*' + start + '(.*?)' + end
+        substring_regex = u'.*' + start + u'(.*?)' + end
         matches = re.findall(substring_regex, text)
 
         return matches
 
     def cleaner(self, text, regexes=[MergeSpaces]):
-        """
+        u"""
         Removes charactes with 'True' values in the argument
         from the input string.
 
@@ -108,7 +109,7 @@ class RegexStudio(object):
         return reduce(process_regex, regexes, text)
 
     def findall(self, regex, text):
-        """
+        u"""
         Finds all regex matches in a text string
 
         :param regex: str: regex pattern to be searched for
@@ -120,7 +121,7 @@ class RegexStudio(object):
         return matches
 
     def matcher(self, text):
-        """
+        u"""
         Create a dictionary for all the properties(parts of text) and matches in constructor
 
         :param text: str
@@ -131,10 +132,10 @@ class RegexStudio(object):
 
         # Iterate through all the properties on this class(see constructor)
         for arg, regex in self.__dict__.items():
-            key = "_".join(arg.split("_")[1:])
+            key = u"_".join(arg.split(u"_")[1:])
             matches[key] = self.findall(regex, text)
 
         # Pop 'merge_spaces' from the dictionary
-        matches.pop('merge_spaces')
+        matches.pop(u'merge_spaces')
 
         return matches
