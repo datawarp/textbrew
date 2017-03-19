@@ -1,4 +1,6 @@
 # textbrew
+
+[![Join the chat at https://gitter.im/rishy/textbrew](https://badges.gitter.im/rishy/textbrew.svg)](https://gitter.im/rishy/textbrew?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Brew your raw text to a more structured and Machine Learning complaint format.
 
 This README file contain all the information you need to start contributing to this repo. If you are still facing any difficulty with the code or setup then simply create an **Issue**.
