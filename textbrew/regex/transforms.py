@@ -5,9 +5,12 @@ from .utils import extract_sub_args
 class BaseRegex:
     '''
     Base Class to Define Regular Expressions.
-    The idea of using classes to implement Regexes is to provide an abstraction which would allow users to control the operation of regex.
-    re.find , re.findall are some direct operations one can do , but at times user might want a further level of cleaning.
-    The abstraction would just allow the user to define custom regex functionality simply by: 
+    The idea of using classes to implement Regexes is to provide an abstraction
+    which would allow users to control the operation of regex.
+    re.find , re.findall are some direct operations one can do , but at times
+    user might want a further level of cleaning.
+    The abstraction would just allow the user to define custom regex
+    functionality simply by:
 
     from textbrew.regex import BaseRegex
 
@@ -15,10 +18,11 @@ class BaseRegex:
             regex_string = #user re string
 
             def processor(self , data , **kwargs):
-                    #This function, if not implemented , by default returns re.sub()
+                    #This function, if not implemented , by default
+                    # returns re.sub()
                     return #Do something
 
-    Any internal usage would involve just involve : 
+    Any internal usage would involve just involve :
     if isinstance( SomeRegex , BaseRegex) : return SomeRegex.process(data)
     '''
     @classmethod
