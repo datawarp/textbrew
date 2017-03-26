@@ -16,7 +16,8 @@ class RegexStudio(object):
         """
         Constructor for RegexStudio, sets up regex patterns
 
-        :param spl_chars: str: special characters to ignore for cleaning purposes(eg: '_|$')
+        :param spl_chars: str: special characters to ignore for cleaning
+        purposes(eg: '_|$')
         """
 
     def add_escape_chars(self, text):
@@ -121,7 +122,8 @@ class RegexStudio(object):
 
     def matcher(self, text):
         """
-        Create a dictionary for all the properties(parts of text) and matches in constructor
+        Create a dictionary for all the properties(parts of text) and matches
+        in constructor
 
         :param text: str
         :return matches: dict: dictionary of part of text and matches
