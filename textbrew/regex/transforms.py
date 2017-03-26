@@ -41,7 +41,7 @@ class BaseRegex:
 
 
 class URL(BaseRegex):
-    regex_string = 'https*\S*|www.\S*.\S'
+    regex_string = 'https*\S*|www.\S*.\S|([a-z]*\.[a-z]+\.?[a-z]{2,4}?)'
 
 
 class HashTag(BaseRegex):
