@@ -16,6 +16,7 @@ git clone https://github.com/<your_username>/textbrew.git
 ```
 <br>
 `cd` into cloned repo:
+
 ```
 cd textbrew
 ```
@@ -27,6 +28,7 @@ So, it is highly recommended that you setup ssh for Github using: [Setting up SS
 Set the `upstream` to this repo:
 
 The easiest way is to use the https url:
+
 ```
 git remote add upstream https://github.com/datawarp/textbrew.git
 ```
@@ -51,27 +53,32 @@ git checkout develop
 ```
 <br>
 Now you can fetch latest changes from main repo using:
+
 ```
 git fetch upstream
 ```
 <br>
 `merge` the latest code with *develop* branch:
+
 ```
 git merge upstream/develop
 ```
 <br>
 `checkout` to your newly created branch:
+
 ```
 git checkout new_branch
 ```
 <br>
 Rebase the code of *new_branch* from the code in *develop* branch, run the `rebase` command from your current branch:
+
 ```
 git rebase develop
 ```
 Now all your changes on your current branch will be based on the top of the changes in *develop* branch.
 
 Push your changes to your forked repo
+
 ```
 git push origin new_branch
 ```
